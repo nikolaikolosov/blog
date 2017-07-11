@@ -1,0 +1,4 @@
+- @posts.each do |post|
+  h2= post.title
+  h6= post.created_at.strftime('%b %d, %Y')
+  h3= post.body
