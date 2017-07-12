@@ -1,0 +1,12 @@
+1. Add comments
+2. Add cozy Bootstrap design
+3. Add possibility to attach images to posts
+4. Add ugly smiles
+5. Add roles
+6. Add possibility to login via social networks to comment
+7. Cover it with tests
+8. Connect CI cerices (Travis CI, codeclimate, etc)
+9. Add tags
+10. Add mail notifications about password resetting, comments, updates, etc
+11. Add admin panel with possibility to delete any comments, freeze threads and ban users
+12. Create mail notification for ban

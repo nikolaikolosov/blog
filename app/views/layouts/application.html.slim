@@ -7,6 +7,19 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    header
+      nav.navbar.navbar-default
+        ul.nav.navbar-nav.navbar-left
+          li= link_to 'Main page', root_path
+          - if user_signed_in?
+            li= link_to 'New post', new_post_path
+            li= link_to 'My account', edit_user_registration_path
+            li= link_to 'Sign out', destroy_user_session_path, :method => :delete
+          - else
+            li= link_to 'Sign up', new_user_registration_path
+            li= link_to 'Sign in', new_user_session_path
     .container
       .row
+        - flash.each do |name, msg|
+          = content_tag(:div, msg, class: "alert alert-#{name}")
         = yield

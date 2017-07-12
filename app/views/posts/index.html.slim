@@ -1,4 +1,13 @@
 - @posts.each do |post|
-  h2= post.title
-  h6= post.created_at.strftime('%b %d, %Y')
-  h3= post.body
+  h4= post.title
+  h6
+    | Created: #{post.created_at.strftime('%b %d, %Y')} by #{post.user.name}
+  = post.body.html_safe
+  br/
+  = post.comments.count
+  |  
+  = "Comment".pluralize(post.comments.count)
+  |  | 
+  = link_to 'Leave a comment', post
+  br/
+  br/
