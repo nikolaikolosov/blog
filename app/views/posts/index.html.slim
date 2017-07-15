@@ -8,6 +8,9 @@
   |  
   = "Comment".pluralize(post.comments.count)
   |  | 
-  = link_to 'Leave a comment', post
+  -if can? :create, Comment
+    = link_to 'Leave a comment', post
+  -else
+    | Please #{link_to 'Sign in', new_user_session_path} to leave a comment
   br/
   br/
