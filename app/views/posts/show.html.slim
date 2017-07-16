@@ -10,7 +10,8 @@ br/
 br/
 h3.comments_title
   = @post.comments.count
-  |  Comments
+  |  
+  = "Comment".pluralize(@post.comments.count)
 br/
 #comments
   = render :partial => @post.comments
