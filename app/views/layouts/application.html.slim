@@ -12,8 +12,9 @@ html
         ul.nav.navbar-nav.navbar-left
           li= link_to 'Main page', root_path
           - if user_signed_in?
-            li= link_to 'New post', new_post_path
-            li= link_to 'My account', edit_user_registration_path
+            -if can? :new, @user
+              li= link_to 'New post', new_post_path
+              li= link_to 'My account', edit_user_registration_path
             li= link_to 'Sign out', destroy_user_session_path, :method => :delete
           - else
             li= link_to 'Sign up', new_user_registration_path

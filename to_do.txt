@@ -1,4 +1,4 @@
-1. Add comments
+1. Add comments - done
 2. Add cozy Bootstrap design
 3. Add possibility to attach images to posts
 4. Add ugly smiles

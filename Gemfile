@@ -13,6 +13,8 @@ gem 'slim'
 gem 'unicorn-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'cancancan', '~> 2.0'
+gem 'rolify'
 gem 'record_tag_helper', '~> 1.0'
 
 group :development, :test do
