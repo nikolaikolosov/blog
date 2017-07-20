@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
-    title "New post"
-    body "Text of the new post"
+    title 'Title of the new post'
+    body 'Text of the new post'
     user
   end
 end

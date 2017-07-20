@@ -2,6 +2,27 @@ require 'rails_helper'
 require 'support/factory_girl'
 require 'support/login_helper'
 
+describe 'Create new post from scratch' do
+  before(:each) do
+    user = create(:user_with_admin_role)
+    login
+  end
+
+  it 'show New post link' do
+    expect(page).to have_content 'New post'
+  end
+
+  it 'save new post' do
+    click_link 'New post'
+    fill_in :post_title, with: 'The awesome title'
+    fill_in :post_body, with: 'The awesome post'
+    click_button 'Create Post'
+
+    expect(page).to have_content 'The awesome title'
+    expect(page).to have_content 'The awesome post'
+  end
+end
+
 describe 'Post page tests when user has a post' do
   before(:each) do
     user = create(:user_with_one_post)
@@ -10,7 +31,7 @@ describe 'Post page tests when user has a post' do
   end
 
   it 'show post title' do
-    expect(page).to have_content 'New post'
+    expect(page).to have_content 'Title of the new post'
   end
 
   it 'show post body' do

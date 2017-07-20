@@ -47,7 +47,7 @@ describe 'Main page tests when user has a post' do
   end
 
   it 'load page with post' do
-    expect(page).to have_content 'New post'
+    expect(page).to have_content 'Title of the new post'
   end
 
   it 'load page with leave a comment link' do

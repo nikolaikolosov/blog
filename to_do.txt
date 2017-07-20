@@ -3,10 +3,10 @@ Add comments
 Add roles
 Cover it with tests
 Connect CI cervices (Travis CI, codeclimate, etc)
+Add possibility to attach images to posts
 
 To do:
 Add possibility to login via social networks to comment
-Add possibility to attach images to posts
 Add tags
 Add cozy Bootstrap design
 Add ugly smiles
