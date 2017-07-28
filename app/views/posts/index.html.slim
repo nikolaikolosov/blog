@@ -3,6 +3,7 @@
   h6
     | Created: #{post.created_at.strftime('%b %d, %Y')} by #{post.user.name}
   = post.body.html_safe
+  h5 Tags: #{raw tag_links(post.all_tags)}
   br/
   = post.comments.count
   |  

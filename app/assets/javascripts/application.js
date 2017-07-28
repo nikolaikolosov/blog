@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require foundation
 //= require turbolinks
 //= require ckeditor/init
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

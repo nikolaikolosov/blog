@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.all.order id: :desc
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).order id: :desc
+    else
+      @posts = Post.all.order id: :desc
+    end
   end
 
   def show; end
@@ -49,7 +53,7 @@ class PostsController < ApplicationController
 private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :all_tags)
   end
 
   def find_post

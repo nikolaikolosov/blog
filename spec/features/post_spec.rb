@@ -12,7 +12,7 @@ describe 'Create new post from scratch' do
     expect(page).to have_content 'New post'
   end
 
-  it 'save new post' do
+  it 'save new post without tags' do
     click_link 'New post'
     fill_in :post_title, with: 'The awesome title'
     fill_in :post_body, with: 'The awesome post'
@@ -20,6 +20,18 @@ describe 'Create new post from scratch' do
 
     expect(page).to have_content 'The awesome title'
     expect(page).to have_content 'The awesome post'
+  end
+
+  it 'save new post wit tags' do
+    click_link 'New post'
+    fill_in :post_title, with: 'The awesome title'
+    fill_in :post_body, with: 'The awesome post'
+    fill_in :post_all_tags, with: 'The tag'
+    click_button 'Create Post'
+
+    expect(page).to have_content 'The awesome title'
+    expect(page).to have_content 'The awesome post'
+    expect(page).to have_content 'The tag'
   end
 end
 

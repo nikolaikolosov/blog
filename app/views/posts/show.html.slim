@@ -1,6 +1,8 @@
 h2= @post.title
 h5= @post.created_at.strftime('%b %d, %Y')
 h3= @post.body.html_safe
+br/
+h5 Tags: #{raw tag_links(@post.all_tags)}
 
 -if can? :new, Post
   .btn-group

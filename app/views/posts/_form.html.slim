@@ -1,4 +1,4 @@
-= simple_form_for post do |f|
+= simple_form_for post, remote: true do |f|
   - if post.errors.any?
     #error_explanation
       h2
@@ -11,5 +11,7 @@
     = f.input :title, class: "form-control"
   .form-group
     = f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'mini'}}, class: "form-control"
+  .form-group
+    = f.input :all_tags, class: "form-control", placeholder: "Tags separated with comma"
   .form-group
     = f.button :submit

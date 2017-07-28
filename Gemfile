@@ -19,6 +19,7 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'foundation-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
